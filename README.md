@@ -1,6 +1,13 @@
 # Ajax
 Ajax
    
+       一个完整的HTTP响应由状态码，响应头集合和响应主体组成，
+        
+       使用这两个方法可以查询到响应头信息	 
+       getResponseHeader()
+       getAllResponseHeaders()
+	
+	
      responseText  最为响应主体被返回的文本
      responseXML  如果响应的内容类型是text/xml或者 application/xml,
                   这个属性中将保存包含响应数据的XML DOM文档                      
