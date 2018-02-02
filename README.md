@@ -35,5 +35,21 @@
 		    从responseXML属性中得到的是Document形式的
 
 
+overrideMimeType()方法
 
+	  xmlhttp = new XMLHttpRequest();   
+
+	 // 保证浏览器发送的串行化数据长度正确，针对某些特定版本的mozillar浏览器的BUG进行修正 
+
+	// 如果来自服务器的响应没有 XML mime-type 头部，则一些版本的 Mozilla 浏览器不能正常运行。
+
+	// 对于这种情况，httpRequest.overrideMimeType('text/xml'); 语句将覆盖发送给服务器的头部，强制
+
+	 // text/xml 作为 mime-type
+
+	 if (xmlhttp.overrideMimeType) {   
+
+	  xmlhttp.overrideMimeType("text/xml");   
+
+	}
 
