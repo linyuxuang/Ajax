@@ -35,3 +35,5 @@
 		    从responseXML属性中得到的是Document形式的
 
 
+
+
