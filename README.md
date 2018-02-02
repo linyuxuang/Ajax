@@ -31,10 +31,7 @@ Ajax
     此时responseText属性内容已经就绪,而且在内容类型正确的情况下,responseXML也能够访问了,
      
     
-
-
-
-
-
+    响应主体可以从responseText属性中得到文本形式，
+    从responseXML属性中得到的是Document形式的
 
 
