@@ -56,7 +56,7 @@ overrideMimeType()方法
 
 ajax跨域集中方法
 
-
+             json_encode — 对变量进行 JSON 编码
 
           一，传统的ajax方法
 
