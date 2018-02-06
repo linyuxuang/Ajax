@@ -52,3 +52,97 @@ overrideMimeType()方法
 
 	}
 
+
+
+ajax跨域集中方法
+
+
+
+          一，传统的ajax方法
+
+		js代码
+		查看复制打印?
+
+		    $("#ajax").click(function(){  
+		     $.ajax({  
+		     type: "POST",  
+		     url: "http://manual.51yip.com/test2.php",  
+		     data: 'name=ajax',  
+		     dataType:"json",  
+		     success: function(data){  
+		     $('#Result').text(data.name);  
+		     }  
+		     });  
+		     });  
+
+
+		test2.php代码
+		 
+		    <?php  
+		       //允许 blog.51yip.com提交访问 
+		       header("Access-Control-Allow-Origin:http://blog.51yip.com"); 
+		         //允许任何访问  
+		      //header("Access-Control-Allow-Origin:*");    
+		    echo json_encode($_POST);  
+
+
+
+          
+          二，ajax jsonp
+
+		js代码
+
+		    $("#jsonp").click(function(){  
+		     $.ajax({  
+		     url: 'http://manual.51yip.com/test1.php',  
+		     data: {name: 'jsonp'},  
+		     dataType: 'jsonp',  
+		     jsonp: 'callback',      //为服务端准备的参数  
+		     jsonpCallback: 'getdata',   //回调函数  
+		     success: function(){  
+		     alert("success");  
+		     }  
+		     });  
+		     });  
+
+		    function getdata(data){  
+		     $('#Result').text(data.name);  
+		    }  
+
+		  test1.php
+
+		    <?php  
+		       //callback根js端要对应，不然会报错的  
+		     if(isset($_GET['name']) && isset($_GET['callback']))
+		     {  
+		      //格式固定的，为什么这样，不清楚 
+		     echo $_GET['callback']. '(' . json_encode($_GET) . ');';   
+		     }  
+		    ?> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
